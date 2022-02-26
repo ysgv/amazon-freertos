@@ -124,7 +124,7 @@ int32_t SecureSocketsTransport_Send( NetworkContext_t * pNetworkContext,
         ( pNetworkContext == NULL ) ||
         ( pNetworkContext->pParams == NULL ) )
     {
-        LogError( ( "Invalid parameter: pMessage=%p, bytesToSend=%lu, pNetworkContext=%p",
+        LogError( ( "Invalid parameter: pMessage=%p, bytesToSend=%u, pNetworkContext=%p",
                     pMessage, bytesToSend, ( void * ) pNetworkContext ) );
         bytesSent = SOCKETS_EINVAL;
     }
@@ -180,7 +180,7 @@ int32_t SecureSocketsTransport_Recv( NetworkContext_t * pNetworkContext,
         ( pNetworkContext == NULL ) ||
         ( pNetworkContext->pParams == NULL ) )
     {
-        LogError( ( "Invalid parameter: pBuffer=%p, bytesToRecv=%lu, pNetworkContext=%p",
+        LogError( ( "Invalid parameter: pBuffer=%p, bytesToRecv=%u, pNetworkContext=%p",
                     pBuffer, bytesToRecv, ( void * ) pNetworkContext ) );
         bytesReceived = SOCKETS_EINVAL;
     }
@@ -421,7 +421,7 @@ static TransportSocketStatus_t establishConnect( NetworkContext_t * pNetworkCont
 
     if( ( hostnameLength > ( size_t ) securesocketsMAX_DNS_NAME_LENGTH ) )
     {
-        LogError( ( "Host name length %lu exceeds max length %d",
+        LogError( ( "Host name length %u exceeds max length %d",
                     hostnameLength, securesocketsMAX_DNS_NAME_LENGTH ) );
         returnStatus = TRANSPORT_SOCKET_STATUS_INVALID_PARAMETER;
     }

@@ -397,7 +397,7 @@ static BaseType_t prvBackoffForRetry( BackoffAlgorithmContext_t * pxRetryParams 
 
             xReturnStatus = pdPASS;
 
-            LogInfo( ( "Retry attempt %lu out of maximum retry attempts %lu.",
+            LogInfo( ( "Retry attempt %u out of maximum retry attempts %u.",
                        ( pxRetryParams->attemptsDone + 1 ),
                        pxRetryParams->maxRetryAttempts ) );
         }
@@ -570,7 +570,7 @@ BaseType_t SubscribeToTopic( MQTTContext_t * pxMqttContext,
 
         if( xMqttStatus != MQTTSuccess )
         {
-            LogError( ( "Failed to SUBSCRIBE to MQTT topic %s. Error=%s",
+            LogError( ( "Failed to SUBSCRIBE to MQTT topic %s. Error=%d",
                         pcTopicFilter, usTopicFilterLength ) );
         }
         else

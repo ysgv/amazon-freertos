@@ -48,7 +48,7 @@ BaseType_t xPkcs11GenerateRandomNumber( uint8_t * pusRandomNumBuffer,
     if( ( pusRandomNumBuffer == NULL ) || ( xBufferLength == 0U ) )
     {
         LogError( ( "Cannot generate random number. Invalid parameters passed. "
-                    "buffer=%p,bufferLen=%lu", pusRandomNumBuffer, xBufferLength ) );
+                    "buffer=%p,bufferLen=%u", pusRandomNumBuffer, xBufferLength ) );
         xStatus = pdFAIL;
     }
 
